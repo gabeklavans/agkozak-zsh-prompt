@@ -288,6 +288,10 @@ If you want to use a string other than `...` to signify that a path has been abb
 
 will replace the default three dots (`...`) with a Unicode ellipsis (`…`), which can free up a little screen space if your terminal font supports it.
 
+If you just want to only display a certain number of directories without any sort of trimming characters, do so by setting `AGKOZAK_DIR_LEVELS`. This follows the logic for determining the trailing components of the working directory as defined in the [zsh docs](https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Shell-state).
+
+*Note: `AGKOZAK_DIR_LEVELS != 0` is not compatible with `AGKOZAK_PROMPT_DIRTRIM != 0`.*
+
 ## Virtual Environments
 
 ![Virtual environments](img/virtual_environments.gif)
@@ -800,7 +804,8 @@ Option | Default | Meaning
 [`AGKOZAK_NAMED_DIRS`](#abbreviated-paths) | `1` | Display named (hashed) directories thus: `~foo`
 [`AGKOZAK_PRE_PROMPT_CHAR`](#optional-single-line-prompt) | ` ` | For a single-line prompt, the character or characters to display before the prompt character
 [`AGKOZAK_PROMPT_DEBUG`](#asynchronous-methods) | `0` | Show debugging information
-[`AGKOZAK_PROMPT_DIRTRIM`](#abbreviated-paths) | `2` | Number of directory elements to display; `0` turns off directory trimming
+[`AGKOZAK_DIR_LEVELS`](#abbreviated-paths) | `0` | Number of trailing components of current directory to display; see [zsh docs](https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Shell-state) for more info
+[`AGKOZAK_PROMPT_DIRTRIM`](#abbreviated-paths) | `2` | Number of directory elements to display before trimming; `0` turns off directory trimming
 [`AGKOZAK_PROMPT_DIRTRIM_STRING`](#abbreviated-paths) | `...` | Ellipsis string used in directory trimming
 [`AGKOZAK_SHOW_BG`](#background-jobs-status) | `1` | Display the number of background jobs you have running
 [`AGKOZAK_SHOW_STASH`](#agkozak_show_stash) | `1` | Display stashed changes

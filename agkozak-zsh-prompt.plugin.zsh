@@ -334,7 +334,7 @@ _agkozak_prompt_dirtrim() {
   # Default behavior (when AGKOZAK_NAMED_DIRS is 1)
   if (( ${AGKOZAK_NAMED_DIRS:-1} )); then
     local zsh_pwd
-    zsh_pwd=${(%):-%~}
+    zsh_pwd=${(%):-%${AGKOZAK_DIR_LEVELS:-0}~}
 
     # IF AGKOZAK_PROMPT_DIRTRIM is not 0, trim directory
     if (( $1 )); then
