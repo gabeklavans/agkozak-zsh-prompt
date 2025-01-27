@@ -966,7 +966,7 @@ _agkozak_prompt_strings() {
       AGKOZAK[PROMPT]+='%(1j. %F{${AGKOZAK_COLORS_BG_STRING:-magenta}}%j${AGKOZAK_BG_STRING:-j}%f.)'
     fi
     if (( ${AGKOZAK_LEFT_PROMPT_ONLY:-0} )); then
-      AGKOZAK[PROMPT]+='%(3V.%F{${AGKOZAK_COLORS_BRANCH_STATUS:-yellow}}%3v%f.)'
+      AGKOZAK[PROMPT]+='%(3V.%F{${AGKOZAK_COLORS_BRANCH_STATUS:-yellow}} %7v%f.)'
     fi
     AGKOZAK[PROMPT]+='${AGKOZAK_PROMPT_WHITESPACE}'
     AGKOZAK[PROMPT]+='%F{${AGKOZAK_COLORS_PROMPT_CHAR:-default}}'
@@ -979,7 +979,7 @@ _agkozak_prompt_strings() {
   else
     # The color right prompt
     if (( ! ${AGKOZAK_LEFT_PROMPT_ONLY:-0} )); then
-      AGKOZAK[RPROMPT]='%(3V.%F{${AGKOZAK_COLORS_BRANCH_STATUS:-yellow}}%3v%f.)'
+      AGKOZAK[RPROMPT]='%(3V.%F{${AGKOZAK_COLORS_BRANCH_STATUS:-yellow}} %7v%f.)'
     else
       AGKOZAK[RPROMPT]=''
     fi
